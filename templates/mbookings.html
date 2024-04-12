@@ -20,7 +20,9 @@ My bookings
     <div class="px-6 py-6">
         <h2 class="text-xl font-bold mb-2">User Detail</h2>
         <ul>
+            {% if item.customer.picture %}
             <img src="{{item.customer.picture.url}}" alt="pic" class="w-20 h-20 overflow-hidden rounded-lg">
+            {% endif %}
             <li>First Name: {{item.customer.first_name}}</li>
             <li>Last Name: {{item.customer.last_name}}</li>
             <li>Phone Number: {{item.customer.phone}}</li>
