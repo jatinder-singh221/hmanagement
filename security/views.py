@@ -1,18 +1,15 @@
 from django.contrib.auth import login, authenticate, logout
 from .models import User
-<<<<<<< HEAD
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models.base import Model as Model
 from django.views.generic import View
 from django.shortcuts import render, redirect
 from rest_framework.generics import RetrieveUpdateAPIView, UpdateAPIView, GenericAPIView
-=======
 from django.db.models.base import Model as Model
 from django.views.generic import TemplateView, View
 from django.shortcuts import render, redirect
 from rest_framework.generics import RetrieveUpdateAPIView, UpdateAPIView
->>>>>>> 56daa069d5064fc7c5df6c6b0b2c522aadc897c4
 from rest_framework.views import APIView
 from .serializer import Userserializer, UpdatePassSerializer
 from rest_framework.response import Response
@@ -54,16 +51,13 @@ class SignUpView(View):
             password = data.get('password')
             first_name = data.get('first_name')
             last_name = data.get('last_name')
-<<<<<<< HEAD
             phone = data.get('phone')
             user = User.objects.create(
                 email=email, first_name=first_name, last_name=last_name,
                 phone=phone
             )
-=======
             user = User.objects.create(
                 email=email, first_name=first_name, last_name=last_name)
->>>>>>> 56daa069d5064fc7c5df6c6b0b2c522aadc897c4
             user.set_password(password)
             user.save()
             login(request, user=user)
@@ -127,8 +121,6 @@ class LogoutView(View):
     def get(self, request, *args, **kwargs):
         logout(request)
         return redirect('/account/login')
-<<<<<<< HEAD
-
 
 class Forget(SuccessMessageMixin, PasswordResetView):
     template_name = 'forget.html'
@@ -138,5 +130,3 @@ class Forget(SuccessMessageMixin, PasswordResetView):
                       "if an account exists with the email you entered. You should receive them shortly." \
                       " If you don't receive an email, " \
                       "please make sure you've entered the address you registered with, and check your spam folder."
-=======
->>>>>>> 56daa069d5064fc7c5df6c6b0b2c522aadc897c4

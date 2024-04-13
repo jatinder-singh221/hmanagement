@@ -8,11 +8,7 @@ My profile
 {% block body %}
 {% include 'navbar.html' %}
 {% load static %}
-<<<<<<< HEAD
-<div class="w-[90%] mx-auto h-full my-20">
-=======
 <div class="w-[90%] mx-auto h-full mt-20">
->>>>>>> 56daa069d5064fc7c5df6c6b0b2c522aadc897c4
     <h1 class="text-3xl font-semibold tracking-tight first:mt-0">My Profile</h1>
     <form id='profile' onsubmit="handleUpdateProfile(event)" method="post" class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
         {% csrf_token %}
